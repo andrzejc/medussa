@@ -17,7 +17,7 @@ script:
     if [[ -n "${TRAVIS_TAG}" && -n "${TWINE_USERNAME}" ]]
     then
       python -m pip install --upgrade twine
-      python -m twine upload --skip-existing wheelhouse/*.whl
+      python -m twine upload --skip-existing --repository-url https://test.pypi.org/legacy/ wheelhouse/*.whl
     fi
 
 matrix:
